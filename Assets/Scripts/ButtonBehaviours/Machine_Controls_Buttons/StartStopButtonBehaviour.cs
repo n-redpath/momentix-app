@@ -32,6 +32,14 @@ public class StartStopButtonBehaviour : MonoBehaviour
     }
 
     public void OnStartStopPress(){
+        
+        if(raycastingScript.activePiece != null){
+            PiecePrefabBehaviour activePieceBehaviour = raycastingScript.activePiece.GetComponent<PiecePrefabBehaviour>();
+            if(activePieceBehaviour.isMoving() || activePieceBehaviour.isPlacementCorrecting()){
+                return;
+            }
+        }
+        
         physicsOn = !physicsOn;
         
         foreach (GameObject piece in raycastingScript.pieces){

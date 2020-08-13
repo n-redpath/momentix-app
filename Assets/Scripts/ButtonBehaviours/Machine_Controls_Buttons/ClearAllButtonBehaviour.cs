@@ -15,6 +15,14 @@ public class ClearAllButtonBehaviour : MonoBehaviour
     }
 
     public void OnClearAllButtonPress(){
+        
+        if(raycastingScript.activePiece != null){
+            PiecePrefabBehaviour activePieceBehaviour = raycastingScript.activePiece.GetComponent<PiecePrefabBehaviour>();
+            if(activePieceBehaviour.isMoving() || activePieceBehaviour.isPlacementCorrecting()){
+                return;
+            }
+        }
+        
         raycastingScript.clearDialogShowing = true;
         clearDialogPanel.SetActive(true);
     }

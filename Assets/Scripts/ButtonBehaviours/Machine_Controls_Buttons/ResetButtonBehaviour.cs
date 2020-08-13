@@ -31,6 +31,13 @@ public class ResetButtonBehaviour : MonoBehaviour
 
     public void OnResetButtonPress(){
         
+        if(raycastingScript.activePiece != null){
+            PiecePrefabBehaviour activePieceBehaviour = raycastingScript.activePiece.GetComponent<PiecePrefabBehaviour>();
+            if(activePieceBehaviour.isMoving() || activePieceBehaviour.isPlacementCorrecting()){
+                return;
+            }
+        }
+
         // reenable the start/stop button, in the event that it had been disabled temporarily through the temporary removal of the last piece
         startStopObject.GetComponent<Button>().interactable = true;
 

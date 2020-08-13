@@ -135,7 +135,7 @@ public abstract class PiecePrefabBehaviour : MonoBehaviour
         setTriggers(false);
         raycastingScript.activePiece = gameObject;
         raycastingScript.piecesScrollView.GetComponent<ScrollRect>().enabled = false;
-        raycastingScript.SetAllButtonsInteractable(false);
+        // raycastingScript.SetAllButtonsInteractable(false); // commented out because this is visually distracting
     }
 
     void Update()
