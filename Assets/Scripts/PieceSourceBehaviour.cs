@@ -50,8 +50,6 @@ public class PieceSourceBehaviour : MonoBehaviour, IPointerDownHandler
             return;
         }
 
-        raycastingScript.SetTopButtonsVisible(true);
-
         // set resettable to false since the new piece doesn't have a place in the previous saved state
         raycastingScript.resetButtonScript.setResettable(false);
 

@@ -40,6 +40,7 @@ public class ResetButtonBehaviour : MonoBehaviour
         }
 
         piecesScrollView.SetActive(true); // needs to be after the OnStartStopPress call    
+        pieceControlsPanel.SetActive(true); // same
         
         // Reactivate the temporarily removed pieces and move them to the normal pieces list
         foreach (GameObject piece in raycastingScript.piecesRemovedWhileResettable){
@@ -74,7 +75,6 @@ public class ResetButtonBehaviour : MonoBehaviour
             if(startStopButtonScript != null){
                 startStopButtonScript.setButtonState("start");
             }
-            pieceControlsPanel.SetActive(true);
         }
     }
 

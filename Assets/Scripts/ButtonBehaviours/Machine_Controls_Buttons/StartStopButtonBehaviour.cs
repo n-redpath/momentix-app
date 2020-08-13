@@ -10,6 +10,7 @@ public class StartStopButtonBehaviour : MonoBehaviour
     public GameObject pieceControlsPanel; // connected in editor
     public GameObject piecesScrollView; // connected in editor
     public GameObject clearAllObject; // connected in editor
+    private Button clearAllButton;
     public GameObject workspaceBoundariesObject; // connected in editor
     private RaycastingBehaviour raycastingScript;
     public bool physicsOn;
@@ -18,6 +19,7 @@ public class StartStopButtonBehaviour : MonoBehaviour
     void Start()
     {
         raycastingScript = mainScriptObject.GetComponent<RaycastingBehaviour>();
+        clearAllButton = clearAllObject.GetComponent<Button>();
         physicsOn = false;
     }
 
@@ -59,8 +61,8 @@ public class StartStopButtonBehaviour : MonoBehaviour
         // disable piece control buttons (even when turning physics off, since we still don't have an active piece yet at that point. But it's all irrelevant anyway if we don't allow paused-machine editing)
         raycastingScript.SetAllPieceControlsButtonsInteractable(false);
 
-        // toggle the visibility of elements that are only visible when physics is off
-        clearAllObject.SetActive(!physicsOn);
+        // toggle the interactability of elements that are only interactable when physics is off
+        clearAllButton.interactable = !physicsOn;
 
         // turn off visibility of pieces scroll view and piece controls panel, since we don't want to allow user to add or edit pieces before resetting
         piecesScrollView.SetActive(false);
@@ -85,15 +87,15 @@ public class StartStopButtonBehaviour : MonoBehaviour
         Text button_text = GetComponentInChildren<Text>();
         switch(state){
             case "pause":
-                button_text.text = "Pause";
+                button_text.text = "pause machine";
                 button_text.color = Color.black;
                 break;
             case "start":
-                button_text.text = "Start";
+                button_text.text = "run machine";
                 button_text.color = new Color(0, 0.5f, 0, 1); // dark green
                 break;
             case "resume":
-                button_text.text = "Resume";
+                button_text.text = "resume machine";
                 button_text.color = new Color(0, 0.5f, 0, 1); // dark green
                 break;
             default:

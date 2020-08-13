@@ -32,7 +32,6 @@ public class RaycastingBehaviour : MonoBehaviour
     public List<GameObject> piecesRemovedWhileResettable; // used in other classes
     public GameObject piecesScrollView; // connected in editor
     public GameObject pieceControlsPanel; // connected in editor
-    public GameObject pieceControlsLabel; // connected in editor
 
     public GameObject pieceRotateLeftButton; // connected in editor
     public GameObject pieceRotateRightButton; // connected in editor
@@ -70,7 +69,6 @@ public class RaycastingBehaviour : MonoBehaviour
         
         pieces = new List<GameObject>();
         piecesRemovedWhileResettable = new List<GameObject>();
-        pieceControlsPanel.SetActive(false);
         startStopButton = startStopObject.GetComponent<Button>();
         resetButton = resetObject.GetComponent<Button>();
         clearAllButton = clearAllObject.GetComponent<Button>();
@@ -221,7 +219,7 @@ public class RaycastingBehaviour : MonoBehaviour
     // this method removes the active piece's halo (if there is an active piece), changes its colliders to triggers, sets the activePiece variable to null, and changes the state of canvas objects
     // this method does NOT remove a piece, but it does check if there are any pieces remaining (and deactivates the piece controls panel, etc. if there aren't)
     // it is fine to call this method in this or another class
-    public void ClearActivePiece(){
+    public void ClearActivePiece(){ 
         if(activePiece != null){
             Behaviour halo = activePiece.GetComponent<PiecePrefabBehaviour>().getHalo() as Behaviour;
             halo.enabled = false;
@@ -229,18 +227,15 @@ public class RaycastingBehaviour : MonoBehaviour
             activePiece = null;
         }
         if(pieceControlsPanel.activeInHierarchy){
-            pieceControlsLabel.GetComponent<Text>().text = "Touch a piece to edit it";
             SetAllPieceControlsButtonsInteractable(false);
         }
         if(pieces.Count == 0){
-            pieceControlsPanel.SetActive(false);
             startStopButton.interactable = false;
             
             if(!resetButtonScript.getResettable()){ // don't make any of the following changes if the contraption is merely paused
                 piecesScrollView.SetActive(true);
                 startStopButtonScript.setButtonState("start");
                 clearAllButton.interactable = false;
-                SetTopButtonsVisible(false);
             }
         }
     }
@@ -261,19 +256,13 @@ public class RaycastingBehaviour : MonoBehaviour
 
     // Set all buttons as interactable or not. 
     // Note that the reset button will only have interactable set to true here if the pieces are currently resettable, 
+    // the start/stop and clear buttons will only have interactable set to true if the machine currently has pieces,
     // and the piece controls buttons will only be set to interactable if there is an active piece (which there might not be, if the user somehow cleared the active piece before placement correction finished)
     public void SetAllButtonsInteractable(bool active){
         SetAllPieceControlsButtonsInteractable(active && activePiece != null);
         SetAllCameraButtonsInteractable(active);
-        startStopButton.interactable = active;
+        startStopButton.interactable = active && pieces.Count > 0;
         resetButton.interactable = active && resetButtonScript.getResettable();
-        clearAllButton.interactable = active;
-    }
-
-    // Set the start/stop, reset, and clear all GameObjects as active or not
-    public void SetTopButtonsVisible(bool visible){
-        startStopObject.SetActive(visible);
-        resetObject.SetActive(visible);
-        clearAllObject.SetActive(visible);
+        clearAllButton.interactable = active && pieces.Count > 0;
     }
 }

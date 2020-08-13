@@ -54,8 +54,6 @@ public abstract class PiecePrefabBehaviour : MonoBehaviour
     protected RaycastingBehaviour raycastingScript;
     private float floorY;
     protected List<GameObject> pieces;
-    protected GameObject pieceControlsPanel;
-    private GameObject pieceControlsLabel;
     protected string pieceDisplayName;
     protected int snapToLayer;
     protected Vector2 prevFrameTouchPosition;
@@ -82,8 +80,6 @@ public abstract class PiecePrefabBehaviour : MonoBehaviour
         GameObject floor = GameObject.Find("Floor");
         floorY = floor.transform.position.y;
         pieces = raycastingScript.pieces;
-        pieceControlsLabel = raycastingScript.pieceControlsLabel;
-        pieceControlsPanel = raycastingScript.pieceControlsPanel;
         pieceSpecificSetup();
         halo = getHalo();
         savedTransforms = new Dictionary<GameObject, SavedTransformInfo>();
@@ -128,8 +124,6 @@ public abstract class PiecePrefabBehaviour : MonoBehaviour
         prevFrameTouchPosition = Input.GetTouch(0).position;
 
         moving = true;
-        pieceControlsPanel.SetActive(true);
-        pieceControlsLabel.GetComponent<Text>().text = "Edit " + pieceDisplayName;
         if(raycastingScript.activePiece != null && raycastingScript.activePiece != gameObject){
             // disable the previous active piece's halo
             Behaviour otherPieceHalo = raycastingScript.activePiece.GetComponent<PiecePrefabBehaviour>().getHalo() as Behaviour;

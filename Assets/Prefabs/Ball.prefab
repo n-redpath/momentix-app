@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4c3c9d8707cb84933a2044735b5a4ff5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,7 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b04f097ccc14759b44c599f5774299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collidedObjects: []
+  prefab: {fileID: 0}
+  currOccupiedSnapToTarget: {fileID: 0}
+  collidersInContact: []
   canMoveDown: 0
   canMoveTowardsNegX: 0
   canMoveTowardsPosX: 0

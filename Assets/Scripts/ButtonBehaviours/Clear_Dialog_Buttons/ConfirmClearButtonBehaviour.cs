@@ -9,6 +9,7 @@ public class ConfirmClearButtonBehaviour : MonoBehaviour
     public GameObject resetObject; // connected in editor
     ResetButtonBehaviour resetButtonScript; 
     public GameObject clearDialogPanel; // connected in editor
+    public GameObject pieceControlsPanel; // connected in editor
     
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,11 @@ public class ConfirmClearButtonBehaviour : MonoBehaviour
         raycastingScript.piecesRemovedWhileResettable.Clear();
         resetButtonScript.setResettable(false);
 
-        // put this after the list is cleared so it knows to undisplay the piece controls panel, etc.
+        // redisplay piece controls panel
+        pieceControlsPanel.SetActive(true);
+
+        // put this after the list is cleared so it knows to disable the start button, etc.
+        // put it after the piece controls panel is displayed so it knows to disable those buttons
         // also put it after resettable is set to false so it knows to redisplay the scroll view, etc.
         raycastingScript.ClearActivePiece(); 
 
