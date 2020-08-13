@@ -58,3 +58,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+################
+
+ely_assets
+Wireframes\ part\ 1/
+.collabignore
+.DS_Store
+
