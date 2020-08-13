@@ -9,6 +9,8 @@ public class StartStopButtonBehaviour : MonoBehaviour
     public GameObject mainScriptObject; // connected in editor
     public GameObject pieceControlsPanel; // connected in editor
     public GameObject piecesScrollView; // connected in editor
+    public Sprite playImg; // connected in editor
+    public Sprite pauseImg; // connected in editor
     public GameObject clearAllObject; // connected in editor
     private Button clearAllButton;
     public GameObject workspaceBoundariesObject; // connected in editor
@@ -87,16 +89,18 @@ public class StartStopButtonBehaviour : MonoBehaviour
         Text button_text = GetComponentInChildren<Text>();
         switch(state){
             case "pause":
-                button_text.text = "pause machine";
-                button_text.color = Color.black;
+                GetComponent<Image>().sprite = pauseImg;
+                // button_text.text = "pause machine";
+                // button_text.color = Color.black;
                 break;
             case "start":
-                button_text.text = "run machine";
-                button_text.color = new Color(0, 0.5f, 0, 1); // dark green
-                break;
+                // button_text.text = "run machine";
+                // button_text.color = new Color(0, 0.5f, 0, 1); // dark green
+                // break;
             case "resume":
-                button_text.text = "resume machine";
-                button_text.color = new Color(0, 0.5f, 0, 1); // dark green
+                GetComponent<Image>().sprite = playImg;
+                // button_text.text = "resume machine";
+                // button_text.color = new Color(0, 0.5f, 0, 1); // dark green
                 break;
             default:
                 break;
