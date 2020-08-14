@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Contraption Designer.unity
+    guid: b49a4c171b19c489fa0a56dfcff93b36
   m_configObjects: {}
