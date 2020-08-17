@@ -65,3 +65,5 @@ Wireframes\ part\ 1/
 .collabignore
 .DS_Store
 
+# The XML documentation file that the compiler generates
+/documentation.xml

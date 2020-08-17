@@ -1,0 +1,192 @@
+<docs>
+    <members name="behindWall">
+        <BehindWallBehaviour>
+            <summary>
+            The class that handles the behaviour of the wall behind the Camera (in its initial orientation).
+            </summary>
+        </BehindWallBehaviour>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <Start>
+            <summary>
+            <c>Start</c> is called before the first frame update.
+            </summary>
+        </Start>
+        <OnTriggerEnter>
+            <summary>
+            Called when a piece comes into contact with this wall.
+            </summary>
+            <param name="other">The <c>Collider</c> that came in contact with this wall's.</param>
+        </OnTriggerEnter>
+        <OnTriggerExit>
+            <summary>
+            Called when a piece leaves contact with this wall.
+            </summary>
+            <param name="other">The <c>Collider</c> that left contact with this wall's.</param>
+        </OnTriggerExit>
+        <GetCompletePiece>
+            <summary>
+            Recursively works up the hierarchy looking for an object with a <c>PiecePrefabBehaviour</c> component. This is implemented because of compound colliders.
+            </summary>
+            <returns>
+            The nearest <c>GameObject</c> in the hierarchy that contains a <c>PiecePrefabBehaviour</c> component, or <c>null</c> if there is none.
+            </returns>
+            <param name="child">The <c>GameObject</c> from which to begin the recursive hierarchy search.</param>
+        </GetCompletePiece>
+    </members>
+    <members name="floor">
+        <FloorBehaviour>
+            <summary>
+            The class that handles the behaviour of the floor.
+            </summary>
+        </FloorBehaviour>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <Start>
+            <summary>
+            <c>Start</c> is called before the first frame update.
+            </summary>
+        </Start>
+        <OnTriggerEnter>
+            <summary>
+            Called when a piece comes into contact with this wall.
+            </summary>
+            <param name="other">The <c>Collider</c> that came in contact with the floor's.</param>
+        </OnTriggerEnter>
+        <OnTriggerExit>
+            <summary>
+            Called when a piece leaves contact with this wall.
+            </summary>
+            <param name="other">The <c>Collider</c> that left contact with the floor's.</param>
+        </OnTriggerExit>
+        <GetCompletePiece>
+            <summary>
+            Recursively works up the hierarchy looking for an object with a <c>PiecePrefabBehaviour</c> component. This is implemented because of compound colliders.
+            </summary>
+            <returns>
+            The nearest <c>GameObject</c> in the hierarchy that contains a <c>PiecePrefabBehaviour</c> component, or <c>null</c> if there is none.
+            </returns>
+            <param name="child">The <c>GameObject</c> from which to begin the recursive hierarchy search.</param>
+        </GetCompletePiece>
+    </members>
+    <members name="inFrontWall">
+        <InFrontWallBehaviour>
+            <summary>
+            The class that handles the behaviour of the wall in front of the Camera (in its initial orientation).
+            </summary>
+        </InFrontWallBehaviour>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <Start>
+            <summary>
+            <c>Start</c> is called before the first frame update.
+            </summary>
+        </Start>
+        <OnTriggerEnter>
+            <summary>
+            Called when a piece comes into contact with this wall.
+            </summary>
+            <param name="other">The <c>Collider</c> that came in contact with this wall's.</param>
+        </OnTriggerEnter>
+        <OnTriggerExit>
+            <summary>
+            Called when a piece leaves contact with this wall.
+            </summary>
+            <param name="other">The <c>Collider</c> that left contact with this wall's.</param>
+        </OnTriggerExit>
+        <GetCompletePiece>
+            <summary>
+            Recursively works up the hierarchy looking for an object with a <c>PiecePrefabBehaviour</c> component. This is implemented because of compound colliders.
+            </summary>
+            <returns>
+            The nearest <c>GameObject</c> in the hierarchy that contains a <c>PiecePrefabBehaviour</c> component, or <c>null</c> if there is none.
+            </returns>
+            <param name="child">The <c>GameObject</c> from which to begin the recursive hierarchy search.</param>
+        </GetCompletePiece>
+    </members>
+    <members name="leftWall">
+        <LeftWallBehaviour>
+            <summary>
+            The class that handles the behaviour of the wall to the left of the Camera (in its initial orientation).
+            </summary>
+        </LeftWallBehaviour>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <Start>
+            <summary>
+            <c>Start</c> is called before the first frame update.
+            </summary>
+        </Start>
+        <OnTriggerEnter>
+            <summary>
+            Called when a piece comes into contact with this wall.
+            </summary>
+            <param name="other">The <c>Collider</c> that came in contact with this wall's.</param>
+        </OnTriggerEnter>
+        <OnTriggerExit>
+            <summary>
+            Called when a piece leaves contact with this wall.
+            </summary>
+            <param name="other">The <c>Collider</c> that left contact with this wall's.</param>
+        </OnTriggerExit>
+        <GetCompletePiece>
+            <summary>
+            Recursively works up the hierarchy looking for an object with a <c>PiecePrefabBehaviour</c> component. This is implemented because of compound colliders.
+            </summary>
+            <returns>
+            The nearest <c>GameObject</c> in the hierarchy that contains a <c>PiecePrefabBehaviour</c> component, or <c>null</c> if there is none.
+            </returns>
+            <param name="child">The <c>GameObject</c> from which to begin the recursive hierarchy search.</param>
+        </GetCompletePiece>
+    </members>
+    <members name="rightWall">
+        <RightWallBehaviour>
+            <summary>
+            The class that handles the behaviour of the wall to the right of the Camera (in its initial orientation).
+            </summary>
+        </RightWallBehaviour>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <Start>
+            <summary>
+            <c>Start</c> is called before the first frame update.
+            </summary>
+        </Start>
+        <OnTriggerEnter>
+            <summary>
+            Called when a piece comes into contact with this wall.
+            </summary>
+            <param name="other">The <c>Collider</c> that came in contact with this wall's.</param>
+        </OnTriggerEnter>
+        <OnTriggerExit>
+            <summary>
+            Called when a piece leaves contact with this wall.
+            </summary>
+            <param name="other">The <c>Collider</c> that left contact with this wall's.</param>
+        </OnTriggerExit>
+        <GetCompletePiece>
+            <summary>
+            Recursively works up the hierarchy looking for an object with a <c>PiecePrefabBehaviour</c> component. This is implemented because of compound colliders.
+            </summary>
+            <returns>
+            The nearest <c>GameObject</c> in the hierarchy that contains a <c>PiecePrefabBehaviour</c> component, or <c>null</c> if there is none.
+            </returns>
+            <param name="child">The <c>GameObject</c> from which to begin the recursive hierarchy search.</param>
+        </GetCompletePiece>
+    </members>
+</docs>
