@@ -1,0 +1,52 @@
+<docs>
+    <members name="pieceSource">
+        <PieceSourceBehaviour>
+            <summary>
+            The class that handles the behaviour of each <c>GameObject</c> from which the user can drag-and-drop additional pieces for their machine. This script should be added to every such <c>GameObject</c>.
+            </summary>
+        </PieceSourceBehaviour>
+        <piecePrefab>
+            <summary>
+            The prefab that this particular piece source instantiates when the user touches it.
+            </summary>
+        </piecePrefab>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <camLeftButton>
+            <summary>
+            The <c>GameObject</c> that contains a <c>CameraRotateLeftButtonBehaviour</c> and therefore handles the behaviour of the camera-rotate-left button.
+            </summary>
+        </camLeftButton>
+        <camRightButton>
+            <summary>
+            The <c>GameObject</c> that contains a <c>CameraRotateRightButtonBehaviour</c> and therefore handles the behaviour of the camera-rotate-right button.
+            </summary>
+        </camRightButton>
+        <pieceLeftButton>
+            <summary>
+            The <c>GameObject</c> that contains a <c>PieceRotateLeftButtonBehaviour</c> and therefore handles the behaviour of the piece-rotate-left button.
+            </summary>
+        </pieceLeftButton>
+        <pieceRightButton>
+            <summary>
+            The <c>GameObject</c> that contains a <c>PieceRotateRightButtonBehaviour</c> and therefore handles the behaviour of the piece-rotate-right button.
+            </summary>
+        </pieceRightButton>
+        <OnPointerDown>
+            <summary>
+            Called when a user begins to touch the piece source <c>GameObject</c>.
+            </summary>
+            <param name="data">The data concerning the pointer down event.</param>
+        </OnPointerDown>
+    </members>
+    <members name="pieceTrigger">
+        <PieceTriggerBehaviour>
+            <summary>
+            The class that handles the behaviour of each child <c>GameObject</c>, within a machine piece prefab, that contains a collider component. This script should be added to every such <c>GameObject</c>.
+            </summary>
+        </PieceTriggerBehaviour>
+    </members>
+</docs>
