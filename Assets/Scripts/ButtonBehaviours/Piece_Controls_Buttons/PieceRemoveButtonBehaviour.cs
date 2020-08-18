@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <include file='docs.xml' path='docs/members[@name="remove"]/PieceRemoveButtonBehaviour/*'/>
 public class PieceRemoveButtonBehaviour : MonoBehaviour
 {
+    
+    /// <include file='docs.xml' path='docs/members[@name="remove"]/mainScriptObject/*'/>
     public GameObject mainScriptObject; // connected in editor
-    RaycastingBehaviour raycastingScript;
+
+    private RaycastingBehaviour raycastingScript;
+    
+    /// <include file='docs.xml' path='docs/members[@name="remove"]/resetButtonObject/*'/>
     public GameObject resetButtonObject; // connected in editor
-    ResetButtonBehaviour resetButtonScript;
+    
+    private ResetButtonBehaviour resetButtonScript;
     
     // Start is called before the first frame update
     void Start()
@@ -16,12 +23,7 @@ public class PieceRemoveButtonBehaviour : MonoBehaviour
         resetButtonScript = resetButtonObject.GetComponent<ResetButtonBehaviour>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <include file='docs.xml' path='docs/members[@name="remove"]/removeActivePiece/*'/>
     public void removeActivePiece(){
         GameObject activePiece = raycastingScript.activePiece;
         PiecePrefabBehaviour activePieceScript = activePiece.GetComponent<PiecePrefabBehaviour>();

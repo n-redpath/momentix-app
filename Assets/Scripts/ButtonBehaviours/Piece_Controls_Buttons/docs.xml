@@ -1,0 +1,98 @@
+<docs>
+    <members name="remove">
+        <PieceRemoveButtonBehaviour>
+            <summary>
+            The class that handles the behaviour of the piece remove button.
+            </summary>
+        </PieceRemoveButtonBehaviour>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <resetButtonObject>
+            <summary>
+            The <c>GameObject</c> that contains a <c>ResetButtonBehaviour</c> and therefore handles the behaviour of the reset button.
+            </summary>
+        </resetButtonObject>
+        <removeActivePiece>
+            <summary>
+            Called when the piece remove button is pressed. Removes the current active piece in the contraption.
+            </summary>
+        </removeActivePiece>
+    </members>
+    <members name="rotateLeft">
+        <PieceRotateLeftButtonBehaviour>
+            <summary>
+            The class that handles the behaviour of the button that rotates the active piece leftwards.
+            </summary>
+        </PieceRotateLeftButtonBehaviour>
+        <DEGREES_PER_SECOND>
+            <summary>
+            The number of degrees the active piece rotates per second whlie the button is pressed.
+            </summary>
+        </DEGREES_PER_SECOND>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <OnPointerDown>
+            <summary>
+            Called when a user begins to press the button.
+            </summary>
+            <param name="data">The data concerning the pointer down event.</param>
+        </OnPointerDown>
+        <OnPointerUp>
+            <summary>
+            Called when a user stops pressing the button.
+            </summary>
+            <param name="data">The data concerning the pointer up event.</param>
+        </OnPointerUp>
+        <rotating>
+            <summary>
+            Returns a bool representing whether or not the active piece is currently rotating leftwards.
+            </summary>
+            <returns>
+            A bool representing whether or not the active piece is currently rotating leftwards.
+            </returns>
+        </rotating>
+    </members>
+    <members name="rotateRight">
+        <PieceRotateRightButtonBehaviour>
+            <summary>
+            The class that handles the behaviour of the button that rotates the active piece rightwards.
+            </summary>
+        </PieceRotateRightButtonBehaviour>
+        <DEGREES_PER_SECOND>
+            <summary>
+            The number of degrees the active piece rotates per second whlie the button is pressed.
+            </summary>
+        </DEGREES_PER_SECOND>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <OnPointerDown>
+            <summary>
+            Called when a user begins to press the button.
+            </summary>
+            <param name="data">The data concerning the pointer down event.</param>
+        </OnPointerDown>
+        <OnPointerUp>
+            <summary>
+            Called when a user stops pressing the button.
+            </summary>
+            <param name="data">The data concerning the pointer up event.</param>
+        </OnPointerUp>
+        <rotating>
+            <summary>
+            Returns a bool representing whether or not the active piece is currently rotating rightwards.
+            </summary>
+            <returns>
+            A bool representing whether or not the active piece is currently rotating rightwards.
+            </returns>
+        </rotating>
+    </members>
+</docs>

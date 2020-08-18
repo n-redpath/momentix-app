@@ -62,6 +62,9 @@
             <summary>
             Getter for the private <c>resettable</c> property.
             </summary>
+            <returns>
+            The current value of <c>resettable</c>, a bool.
+            </returns>
         </getResettable>
     </members>
     <members name="startStop">
