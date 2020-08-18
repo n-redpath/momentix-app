@@ -11,7 +11,6 @@ public class InFrontWallBehaviour : MonoBehaviour
     private RaycastingBehaviour raycastingScript;
 
     // Start is called before the first frame update
-    /// <include file='docs.xml' path='docs/members[@name="inFrontWall"]/Start/*'/>
     void Start()
     {
         raycastingScript = mainScriptObject.GetComponent<RaycastingBehaviour>();

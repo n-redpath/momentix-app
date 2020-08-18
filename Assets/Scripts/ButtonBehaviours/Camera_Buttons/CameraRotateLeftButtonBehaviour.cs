@@ -4,14 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <include file='docs.xml' path='docs/members[@name="rotateLeft"]/CameraRotateLeftButtonBehaviour/*'/>
 public class CameraRotateLeftButtonBehaviour : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
 
     private int camRotationDirection; // 0 is not moving, 1 moves left, -1 moves right
+    
+    /// <include file='docs.xml' path='docs/members[@name="rotateLeft"]/DEGREES_PER_SECOND/*'/>
     public const float DEGREES_PER_SECOND = 45;
 
+    /// <include file='docs.xml' path='docs/members[@name="rotateLeft"]/mainScriptObject/*'/>
     public GameObject mainScriptObject; // connected in editor
+    
     private RaycastingBehaviour raycastingScript;
+    
+    /// <include file='docs.xml' path='docs/members[@name="rotateLeft"]/camRotationCenter/*'/>
     public GameObject camRotationCenter; // connected in editor
 
     // Start is called before the first frame update
@@ -27,6 +34,7 @@ public class CameraRotateLeftButtonBehaviour : MonoBehaviour, IPointerDownHandle
         Camera.main.gameObject.transform.RotateAround(camRotationCenter.transform.position, raycastingScript.camAxisOfHorizRotation, camRotationDirection * DEGREES_PER_SECOND * Time.deltaTime);
     }
 
+    /// <include file='docs.xml' path='docs/members[@name="rotateLeft"]/OnPointerDown/*'/>
     public void OnPointerDown(PointerEventData data){
         if(raycastingScript.activePiece != null){
             PiecePrefabBehaviour activePieceBehaviour = raycastingScript.activePiece.GetComponent<PiecePrefabBehaviour>();
@@ -37,10 +45,12 @@ public class CameraRotateLeftButtonBehaviour : MonoBehaviour, IPointerDownHandle
         camRotationDirection = 1;
     }
     
+    /// <include file='docs.xml' path='docs/members[@name="rotateLeft"]/OnPointerUp/*'/>
     public void OnPointerUp(PointerEventData data){
         camRotationDirection = 0;
     }
 
+    /// <include file='docs.xml' path='docs/members[@name="rotateLeft"]/rotating/*'/>
     public bool rotating(){
         return camRotationDirection != 0;
     }

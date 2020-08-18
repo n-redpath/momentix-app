@@ -11,7 +11,6 @@ public class RightWallBehaviour : MonoBehaviour
     private RaycastingBehaviour raycastingScript;
 
     // Start is called before the first frame update
-    /// <include file='docs.xml' path='docs/members[@name="rightWall"]/Start/*'/>
     void Start()
     {
         raycastingScript = mainScriptObject.GetComponent<RaycastingBehaviour>();

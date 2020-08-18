@@ -10,11 +10,6 @@
             The <c>GameObject</c> that stores the central data for the running of the program.
             </summary>
         </mainScriptObject>
-        <Start>
-            <summary>
-            <c>Start</c> is called before the first frame update.
-            </summary>
-        </Start>
         <OnTriggerEnter>
             <summary>
             Called when a piece comes into contact with this wall.
@@ -48,11 +43,6 @@
             The <c>GameObject</c> that stores the central data for the running of the program.
             </summary>
         </mainScriptObject>
-        <Start>
-            <summary>
-            <c>Start</c> is called before the first frame update.
-            </summary>
-        </Start>
         <OnTriggerEnter>
             <summary>
             Called when a piece comes into contact with this wall.
@@ -86,11 +76,6 @@
             The <c>GameObject</c> that stores the central data for the running of the program.
             </summary>
         </mainScriptObject>
-        <Start>
-            <summary>
-            <c>Start</c> is called before the first frame update.
-            </summary>
-        </Start>
         <OnTriggerEnter>
             <summary>
             Called when a piece comes into contact with this wall.
@@ -124,11 +109,6 @@
             The <c>GameObject</c> that stores the central data for the running of the program.
             </summary>
         </mainScriptObject>
-        <Start>
-            <summary>
-            <c>Start</c> is called before the first frame update.
-            </summary>
-        </Start>
         <OnTriggerEnter>
             <summary>
             Called when a piece comes into contact with this wall.
@@ -162,11 +142,6 @@
             The <c>GameObject</c> that stores the central data for the running of the program.
             </summary>
         </mainScriptObject>
-        <Start>
-            <summary>
-            <c>Start</c> is called before the first frame update.
-            </summary>
-        </Start>
         <OnTriggerEnter>
             <summary>
             Called when a piece comes into contact with this wall.

@@ -1,0 +1,86 @@
+<docs>
+    <members name="rotateLeft">
+        <CameraRotateLeftButtonBehaviour>
+            <summary>
+            The class that handles the behaviour of the button that rotates the camera leftwards.
+            </summary>
+        </CameraRotateLeftButtonBehaviour>
+        <DEGREES_PER_SECOND>
+            <summary>
+            The number of degrees the camera rotates per second whlie the button is pressed.
+            </summary>
+        </DEGREES_PER_SECOND>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <camRotationCenter>
+            <summary>
+            The <c>GameObject</c> about which the camera rotates.
+            </summary>
+        </camRotationCenter>
+        <OnPointerDown>
+            <summary>
+            Called when a user begins to press the button.
+            </summary>
+            <param name="data">The data concerning the pointer down event.</param>
+        </OnPointerDown>
+        <OnPointerUp>
+            <summary>
+            Called when a user stops pressing the button.
+            </summary>
+            <param name="data">The data concerning the pointer up event.</param>
+        </OnPointerUp>
+        <rotating>
+            <summary>
+            Returns a bool representing whether or not the camera is currently rotating leftwards.
+            </summary>
+            <returns>
+            A bool representing whether or not the camera is currently rotating leftwards.
+            </returns>
+        </rotating>
+    </members>
+    <members name="rotateRight">
+        <CameraRotateRightButtonBehaviour>
+            <summary>
+            The class that handles the behaviour of the button that rotates the camera rightwards.
+            </summary>
+        </CameraRotateRightButtonBehaviour>
+        <DEGREES_PER_SECOND>
+            <summary>
+            The number of degrees the camera rotates per second whlie the button is pressed.
+            </summary>
+        </DEGREES_PER_SECOND>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <camRotationCenter>
+            <summary>
+            The <c>GameObject</c> about which the camera rotates.
+            </summary>
+        </camRotationCenter>
+        <OnPointerDown>
+            <summary>
+            Called when a user begins to press the button.
+            </summary>
+            <param name="data">The data concerning the pointer down event.</param>
+        </OnPointerDown>
+        <OnPointerUp>
+            <summary>
+            Called when a user stops pressing the button.
+            </summary>
+            <param name="data">The data concerning the pointer up event.</param>
+        </OnPointerUp>
+        <rotating>
+            <summary>
+            Returns a bool representing whether or not the camera is currently rotating rightwards.
+            </summary>
+            <returns>
+            A bool representing whether or not the camera is currently rotating rightwards.
+            </returns>
+        </rotating>
+    </members>
+</docs>

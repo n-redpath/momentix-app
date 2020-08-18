@@ -2,13 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <include file='docs.xml' path='docs/members[@name="confirmClear"]/ConfirmClearButtonBehaviour/*'/>
 public class ConfirmClearButtonBehaviour : MonoBehaviour
 {
+
+    /// <include file='docs.xml' path='docs/members[@name="confirmClear"]/mainScriptObject/*'/>
     public GameObject mainScriptObject; // connected in editor
-    RaycastingBehaviour raycastingScript;
+
+    private RaycastingBehaviour raycastingScript;
+
+    /// <include file='docs.xml' path='docs/members[@name="confirmClear"]/resetObject/*'/>
     public GameObject resetObject; // connected in editor
-    ResetButtonBehaviour resetButtonScript; 
+
+    private ResetButtonBehaviour resetButtonScript; 
+    
+    /// <include file='docs.xml' path='docs/members[@name="confirmClear"]/clearDialogPanel/*'/>
     public GameObject clearDialogPanel; // connected in editor
+
+    /// <include file='docs.xml' path='docs/members[@name="confirmClear"]/pieceControlsPanel/*'/>
     public GameObject pieceControlsPanel; // connected in editor
     
     // Start is called before the first frame update
@@ -18,6 +29,7 @@ public class ConfirmClearButtonBehaviour : MonoBehaviour
         resetButtonScript = resetObject.GetComponent<ResetButtonBehaviour>();
     }
 
+    /// <include file='docs.xml' path='docs/members[@name="confirmClear"]/OnConfirmClearButtonPress/*'/>
     public void OnConfirmClearButtonPress(){
         foreach (GameObject piece in raycastingScript.pieces){
             Destroy(piece);

@@ -1,0 +1,56 @@
+<docs>
+    <members name="cancelClear">
+        <CancelClearButtonBehaviour>
+            <summary>
+            The class that handles the behaviour of the button that cancels clearing all the pieces.
+            </summary>
+        </CancelClearButtonBehaviour>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <clearDialogPanel>
+            <summary>
+            The <c>GameObject</c> that contains the panel with the clear confirmation message and buttons.
+            </summary>
+        </clearDialogPanel>
+        <OnCancelClearButtonPress>
+            <summary>
+            Called when the user presses the cancel-clear-all button.
+            </summary>
+        </OnCancelClearButtonPress>
+    </members>
+    <members name="confirmClear">
+        <ConfirmClearButtonBehaviour>
+            <summary>
+            The class that handles the behaviour of the button that confirms clearing all the pieces.
+            </summary>
+        </ConfirmClearButtonBehaviour>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <resetObject>
+            <summary>
+            The <c>GameObject</c> that has an attached <c>ResetButtonBehaviour</c> and stores the program's data concerning resetting.
+            </summary>
+        </resetObject>
+        <clearDialogPanel>
+            <summary>
+            The <c>GameObject</c> that contains the panel with the clear confirmation message and buttons.
+            </summary>
+        </clearDialogPanel>
+        <pieceControlsPanel>
+            <summary>
+            The <c>GameObject</c> that contains the panel with the piece controls buttons.
+            </summary>
+        </pieceControlsPanel>
+        <OnConfirmClearButtonPress>
+            <summary>
+            Called when the user presses the confirm-clear-all button.
+            </summary>
+        </OnConfirmClearButtonPress>
+    </members>
+</docs>
