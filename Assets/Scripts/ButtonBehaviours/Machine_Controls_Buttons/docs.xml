@@ -1,0 +1,125 @@
+<docs>
+    <members name="clearAll">
+        <ClearAllButtonBehaviour>
+            <summary>
+            The class that handles the behaviour of the clear all button.
+            </summary>
+        </ClearAllButtonBehaviour>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <clearDialogPanel>
+            <summary>
+            The <c>GameObject</c> that contains the panel with the clear confirmation message and buttons.
+            </summary>
+        </clearDialogPanel>
+        <OnClearAllButtonPress>
+            <summary>
+            Called when the clear all button is pressed.
+            </summary>
+        </OnClearAllButtonPress>
+    </members>
+    <members name="reset">
+        <ResetButtonBehaviour>
+            <summary>
+            The class that handles the behaviour of the reset button.
+            </summary>
+        </ResetButtonBehaviour>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <piecesScrollView>
+            <summary>
+            The <c>GameObject</c> contains the scroll panel with all the contraption pieces.
+            </summary>
+        </piecesScrollView>
+        <startStopObject>
+            <summary>
+            The <c>GameObject</c> that contains a <c>StartStopButtonBehaviour</c> and therefore handles the behaviour of the start/stop button.
+            </summary>
+        </startStopObject>
+        <pieceControlsPanel>
+            <summary>
+            The <c>GameObject</c> that contains the panel with the piece controls buttons.
+            </summary>
+        </pieceControlsPanel>
+        <OnResetButtonPress>
+            <summary>
+            Called when the reset button is pressed.
+            </summary>
+        </OnResetButtonPress>
+        <setResettable>
+            <summary>
+            Setter for the private <c>resettable</c> property. Also sets the reset button's <c>interactable</c> property, and changes the appearance of the start/stop button, if applicable.
+            </summary>
+            <param name="resettable">A bool representing the new resettable or non-resettable state.</param>
+        </setResettable>
+        <getResettable>
+            <summary>
+            Getter for the private <c>resettable</c> property.
+            </summary>
+        </getResettable>
+    </members>
+    <members name="startStop">
+        <StartStopButtonBehaviour>
+            <summary>
+            The class that handles the behaviour of the start/stop button.
+            </summary>
+        </StartStopButtonBehaviour>
+        <mainScriptObject>
+            <summary>
+            The <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </mainScriptObject>
+        <pieceControlsPanel>
+            <summary>
+            The <c>GameObject</c> that contains the panel with the piece controls buttons.
+            </summary>
+        </pieceControlsPanel>
+        <piecesScrollView>
+            <summary>
+            The <c>GameObject</c> contains the scroll panel with all the contraption pieces.
+            </summary>
+        </piecesScrollView>
+        <playImg>
+            <summary>
+            The <c>Sprite</c> used for the start/stop button while it's a "start"/"resume"/"play" button.
+            </summary>
+        </playImg>
+        <pauseImg>
+            <summary>
+            The <c>Sprite</c> used for the start/stop button while it's a "stop"/"pause" button.
+            </summary>
+        </pauseImg>
+        <clearAllObject>
+            <summary>
+            The <c>GameObject</c> that contains a <c>ClearAllButtonBehaviour</c> and therefore handles the behaviour of the clear all button.
+            </summary>
+        </clearAllObject>
+        <workspaceBoundariesObject>
+            <summary>
+            The parent <c>GameObject</c> that contains all the workspace boundaries (walls and floor).
+            </summary>
+        </workspaceBoundariesObject>
+        <physicsOn>
+            <summary>
+            A bool representing whether or not the machine is currently executing according to the laws of physics.
+            </summary>
+        </physicsOn>
+        <OnStartStopPress>
+            <summary>
+            Called when the reset button is pressed.
+            </summary>
+        </OnStartStopPress>
+        <setButtonState>
+            <summary>
+            Sets the visible state (i.e. the text and color) of the button.
+            </summary>
+            <param name="state">The new state of the button. Can be <c>"start"</c>, <c>"pause"</c>, or <c>"resume"</c>.</param>
+        </setButtonState>
+    </members>
+</docs>

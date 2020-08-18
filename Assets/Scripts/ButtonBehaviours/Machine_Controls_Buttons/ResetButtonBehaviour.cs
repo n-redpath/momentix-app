@@ -3,16 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <include file='docs.xml' path='docs/members[@name="reset"]/ResetButtonBehaviour/*'/>
 public class ResetButtonBehaviour : MonoBehaviour
 {
     // only true when physics has been turned on since the last reset (or since the launching of the Contraption Designer, if there hasn't been a reset yet)
     // keep this private so that other classes have to use the setter, which also toggles button's interactable property
     private bool resettable;
+
+    /// <include file='docs.xml' path='docs/members[@name="reset"]/mainScriptObject/*'/>
     public GameObject mainScriptObject; // connected in editor
+
+    /// <include file='docs.xml' path='docs/members[@name="reset"]/piecesScrollView/*'/>
     public GameObject piecesScrollView; // connected in editor
+
+    /// <include file='docs.xml' path='docs/members[@name="reset"]/startStopObject/*'/>
     public GameObject startStopObject; // connected in editor
+
+    /// <include file='docs.xml' path='docs/members[@name="reset"]/pieceControlsPanel/*'/>
     public GameObject pieceControlsPanel; // connected in editor
+    
     private RaycastingBehaviour raycastingScript;
+    
     private StartStopButtonBehaviour startStopButtonScript;
     
     // Start is called before the first frame update
@@ -23,14 +34,10 @@ public class ResetButtonBehaviour : MonoBehaviour
         startStopButtonScript = startStopObject.GetComponent<StartStopButtonBehaviour>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <include file='docs.xml' path='docs/members[@name="reset"]/OnResetButtonPress/*'/>
     public void OnResetButtonPress(){
         
+        // ignore button press if a piece is moving or being placement-corrected
         if(raycastingScript.activePiece != null){
             PiecePrefabBehaviour activePieceBehaviour = raycastingScript.activePiece.GetComponent<PiecePrefabBehaviour>();
             if(activePieceBehaviour.isMoving() || activePieceBehaviour.isPlacementCorrecting()){
@@ -74,10 +81,16 @@ public class ResetButtonBehaviour : MonoBehaviour
         setResettable(false); // needs to be after the OnStartStopPress call
     }
 
-    // also toggles the button's interactable property, and reappears the piece controls panel if applicable
+    /// <include file='docs.xml' path='docs/members[@name="reset"]/setResettable/*'/>
     public void setResettable(bool resettable){
+        
+        // set the button's interactable property
         gameObject.GetComponent<Button>().interactable = resettable;
+        
+        // set resettable instance variable
         this.resettable = resettable;
+        
+        // update the start/stop button appearance, if applicable
         if(!resettable){
             if(startStopButtonScript != null){
                 startStopButtonScript.setButtonState("start");
@@ -85,6 +98,7 @@ public class ResetButtonBehaviour : MonoBehaviour
         }
     }
 
+    /// <include file='docs.xml' path='docs/members[@name="reset"]/getResettable/*'/>
     public bool getResettable(){
         return resettable;
     }

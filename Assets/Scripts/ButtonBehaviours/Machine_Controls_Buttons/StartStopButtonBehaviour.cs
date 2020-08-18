@@ -3,18 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <include file='docs.xml' path='docs/members[@name="startStop"]/StartStopButtonBehaviour/*'/>
 public class StartStopButtonBehaviour : MonoBehaviour
 {
 
+    /// <include file='docs.xml' path='docs/members[@name="startStop"]/mainScriptObject/*'/>
     public GameObject mainScriptObject; // connected in editor
+
+    /// <include file='docs.xml' path='docs/members[@name="startStop"]/pieceControlsPanel/*'/>
     public GameObject pieceControlsPanel; // connected in editor
+
+    /// <include file='docs.xml' path='docs/members[@name="startStop"]/piecesScrollView/*'/>
     public GameObject piecesScrollView; // connected in editor
+
+    /// <include file='docs.xml' path='docs/members[@name="startStop"]/playImg/*'/>
     public Sprite playImg; // connected in editor
+
+    /// <include file='docs.xml' path='docs/members[@name="startStop"]/pauseImg/*'/>
     public Sprite pauseImg; // connected in editor
+
+    /// <include file='docs.xml' path='docs/members[@name="startStop"]/clearAllObject/*'/>
     public GameObject clearAllObject; // connected in editor
+
     private Button clearAllButton;
+
+    /// <include file='docs.xml' path='docs/members[@name="startStop"]/workspaceBoundariesObject/*'/>
     public GameObject workspaceBoundariesObject; // connected in editor
+
     private RaycastingBehaviour raycastingScript;
+
+    /// <include file='docs.xml' path='docs/members[@name="startStop"]/physicsOn/*'/>
     public bool physicsOn;
 
     // Start is called before the first frame update
@@ -25,14 +43,10 @@ public class StartStopButtonBehaviour : MonoBehaviour
         physicsOn = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <include file='docs.xml' path='docs/members[@name="startStop"]/OnStartStopPress/*'/>
     public void OnStartStopPress(){
         
+        // ignore the button press if a piece is moving or being placement-corrected
         if(raycastingScript.activePiece != null){
             PiecePrefabBehaviour activePieceBehaviour = raycastingScript.activePiece.GetComponent<PiecePrefabBehaviour>();
             if(activePieceBehaviour.isMoving() || activePieceBehaviour.isPlacementCorrecting()){
@@ -40,8 +54,10 @@ public class StartStopButtonBehaviour : MonoBehaviour
             }
         }
         
+        // toggle physicsOn instance variable
         physicsOn = !physicsOn;
         
+        // handle the saving/resuming of positions and velocities
         foreach (GameObject piece in raycastingScript.pieces){
             PiecePrefabBehaviour pieceScript = piece.GetComponent<PiecePrefabBehaviour>();
             if(physicsOn && !raycastingScript.resetButtonScript.getResettable()){
@@ -59,8 +75,10 @@ public class StartStopButtonBehaviour : MonoBehaviour
             }
         }
 
+        // set the state of the reset button and corresponding data
         raycastingScript.resetButtonScript.setResettable(true);
 
+        // set the appearance of this button, and make sure to clear the active piece variable
         if(physicsOn){
             raycastingScript.ClearActivePiece(); // probably not necessary since pressing the button should clear active piece anyway, but might as well play it safe
             setButtonState("pause"); // change the text and color of the button
@@ -92,23 +110,17 @@ public class StartStopButtonBehaviour : MonoBehaviour
         }
     }
 
-    // set the visible state (i.e. the text and color) of the button. param state: can be "start" or "pause" or "resume"
+    /// <include file='docs.xml' path='docs/members[@name="startStop"]/setButtonState/*'/>
     public void setButtonState(string state){
         Text button_text = GetComponentInChildren<Text>();
         switch(state){
             case "pause":
                 GetComponent<Image>().sprite = pauseImg;
-                // button_text.text = "pause machine";
-                // button_text.color = Color.black;
                 break;
             case "start":
-                // button_text.text = "run machine";
-                // button_text.color = new Color(0, 0.5f, 0, 1); // dark green
-                // break;
+                // currently just letting this fall through into the "resume" functionality, since there's no difference between the two states
             case "resume":
                 GetComponent<Image>().sprite = playImg;
-                // button_text.text = "resume machine";
-                // button_text.color = new Color(0, 0.5f, 0, 1); // dark green
                 break;
             default:
                 break;
