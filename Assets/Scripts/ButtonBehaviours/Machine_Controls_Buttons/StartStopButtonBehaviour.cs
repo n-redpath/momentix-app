@@ -57,11 +57,11 @@ public class StartStopButtonBehaviour : MonoBehaviour
         // toggle physicsOn instance variable
         physicsOn = !physicsOn;
         
-        // handle the saving/resuming of positions and velocities
+        // handle the saving/resuming of positions, rotations, and velocities
         foreach (GameObject piece in raycastingScript.pieces){
             PiecePrefabBehaviour pieceScript = piece.GetComponent<PiecePrefabBehaviour>();
             if(physicsOn && !raycastingScript.resetButtonScript.getResettable()){
-                // If physics is on, save positions, if positions haven't already been saved since the last reset (or since the Contraption Designer loaded, if there hasn't been a reset yet)
+                // If physics is on, save positions and rotations, if they haven't already been saved since the last reset (or since the Contraption Designer loaded, if there hasn't been a reset yet)
                 // i.e. this code runs when the user pressed a button that said, "start"
                 pieceScript.saveTransforms();
             }else if(physicsOn){

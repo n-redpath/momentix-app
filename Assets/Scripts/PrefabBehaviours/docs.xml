@@ -1,0 +1,199 @@
+<docs>
+    <members name="piecePrefab">
+        <PiecePrefabBehaviour>
+            <summary>
+            The abstract parent class for all scripts attached to machine piece prefabs that control the overall behaviour of those piece prefabs.
+            </summary>
+        </PiecePrefabBehaviour>
+        <prefab>
+            <summary>
+            The prefab of which this script's piece is an instance.
+            </summary>
+        </prefab>
+        <isNew>
+            <summary>
+            This bool is true if and only if the user hasn't stopped dragging the script's piece since it was instantiated.
+            </summary>
+        </isNew>
+        <moving>
+            <summary>
+            This bool is true if and only if the user is currently dragging the script's piece.
+            </summary>
+        </moving>
+        <currOccupiedSnapToTarget>
+            <summary>
+            The empty GameObject at the snap-to location this script's piece is currently occupying.
+            </summary>
+        </currOccupiedSnapToTarget>
+        <collidersInContact>
+            <summary>
+            The list of colliders which have fired OnTriggerEnter regarding this piece but not yet OnTriggerExit, meaning the piece must leave them before placement correction is complete.
+            </summary>
+        </collidersInContact>
+        <canMoveDown>
+            <summary>
+            A bool representing whether or not it is legal for the user to move this piece further in the negative y direction in world space.
+            </summary>
+        </canMoveDown>
+        <canMoveTowardsNegX>
+            <summary>
+            A bool representing whether or not it is legal for the user to move this piece further in the negative x direction in world space.
+            </summary>
+        </canMoveTowardsNegX>
+        <canMoveTowardsPosX>
+            <summary>
+            A bool representing whether or not it is legal for the user to move this piece further in the positive x direction in world space.
+            </summary>
+        </canMoveTowardsPosX>
+        <canMoveTowardsNegZ>
+            <summary>
+            A bool representing whether or not it is legal for the user to move this piece further in the negative z direction in world space.
+            </summary>
+        </canMoveTowardsNegZ>
+        <canMoveTowardsPosZ>
+            <summary>
+            A bool representing whether or not it is legal for the user to move this piece further in the positive z direction in world space.
+            </summary>
+        </canMoveTowardsPosZ>
+        <mainCamera>
+            <summary>
+            The main <c>Camera</c> in the Contraption Designer scene.
+            </summary>
+        </mainCamera>
+        <raycastingScript>
+            <summary>
+            The <c>RaycastingBehaviour</c> attached to the <c>GameObject</c> that stores the central data for the running of the program.
+            </summary>
+        </raycastingScript>
+        <pieces>
+            <summary>
+            Points to the main script's list of pieces that are currently part of the machine. 
+            </summary>
+        </pieces>
+        <pieceDisplayName>
+            <summary>
+            The <c>string</c> that displays onscreen whenever a name for this script's piece is needed.
+            </summary>
+        </pieceDisplayName>
+        <snapToLayer>
+            <summary>
+            The Unity layer whose <c>GameObject</c>s this script's piece is eligible to snap to.
+            </summary>
+        </snapToLayer>
+        <prevFrameTouchPosition>
+            <summary>
+            The screen coordinates of the user's touch during the previous frame.
+            </summary>
+        </prevFrameTouchPosition>
+        <OnPieceTouchBegin>
+            <summary>
+            A method that runs every time the user activates this piece, either by touching it, or by touching its corresponding 2D source and thus instantiating it.
+            </summary>
+        </OnPieceTouchBegin>
+        <pieceSpecificSetup>
+            <summary>
+            Commands specific to the setup of the concrete behaviour type for this piece.
+            </summary>
+        </pieceSpecificSetup>
+        <movePiece>
+            <summary>
+            The piece-specific method for moving to follow the user's touch.
+            </summary>
+            <param name="touchPosition">The new screen coordinates of the user's touch.</param>
+        </movePiece>
+        <setKinematic>
+            <summary>
+            Sets the <c>isKinematic</c> property on all descendent <c>GameObject</c>s (within this script's machine piece) that contain <c>Rigidbody</c> components.
+            </summary>
+            <param name="kinematic">A bool representing the new kinematic or non-kinematic state of this piece's <c>Rigidbody</c> components.</param>
+        </setKinematic>
+        <setTriggers>
+            <summary>
+            Sets the <c>isTrigger</c> property on all descendent <c>GameObject</c>s (within this script's machine piece) that contain <c>Collider</c> components.
+            </summary>
+            <param name="triggers">A bool representing the new trigger or non-trigger state of this piece's <c>Collider</c> components.</param>
+        </setTriggers>
+        <getHalo>
+            <summary>
+            Getter for the <c>Halo</c> attached to this piece or one of its descendent <c>GameObject</c>s.
+            </summary>
+            <returns>
+            A <c>Behaviour</c> that is the <c>Halo</c> attached to this piece or one of its descendent <c>GameObject</c>s.
+            </returns>
+        </getHalo>
+        <getHeight>
+            <summary>
+            Returns the piece's height, using a piece-specific algorithm to find it.
+            </summary>
+            <returns>
+            The piece's height.
+            </returns>
+        </getHeight>
+        <getTop>
+            <summary>
+            Returns the world-space y-coordinate of the top of this piece, using a piece-specific algorithm to find it.
+            </summary>
+            <returns>
+            The world-space y-coordinate of the top of this piece.
+            </returns>
+        </getTop>
+        <getBottom>
+            <summary>
+            Returns the world-space y-coordinate of the bottom of this piece, using a piece-specific algorithm to find it.
+            </summary>
+            <returns>
+            The world-space y-coordinate of the bottom of this piece.
+            </returns>
+        </getBottom>
+        <convertBottomToTransformY>
+            <summary>
+            Returns the value for transform.position.y for this piece overall that would cause the bottom of this piece to be at the given coordinate. This method doesn't actually modify anything; it just returns a value.
+            </summary>
+            <returns>
+            The value for transform.position.y for this piece overall that would cause the bottom of this piece to be at the given coordinate.
+            </returns>
+            <param name="bottom">The world-space y-coordinate desired for the bottom of the piece.</param>
+        </convertBottomToTransformY>
+        <saveTransforms>
+            <summary>
+            Stores the current positions and rotations of all pieces so that they can be reset to them later.
+            </summary>
+        </saveTransforms>
+        <resetTransforms>
+            <summary>
+            Resets all pieces to their stored positions and rotations.
+            </summary>
+        </resetTransforms>
+        <saveVelocities>
+            <summary>
+            Stores the current velocities of all pieces so that they can be resumed later.
+            </summary>
+        </saveVelocities>
+        <resumeVelocities>
+            <summary>
+            Restores the stored velocities of all pieces.
+            </summary>
+        </resumeVelocities>
+        <clearVelocities>
+            <summary>
+            Clears the stored velocities of all pieces.
+            </summary>
+        </clearVelocities>
+        <isMoving>
+            <summary>
+            Getter for the <c>moving</c> property.
+            </summary>
+            <returns>
+            A bool representing whether or not the user is currently moving this script's piece.
+            </returns>
+        </isMoving>
+        <isPlacementCorrecting>
+            <summary>
+            Returns a bool representing whether or not the this script's piece is currently undergoing placement correction.
+            </summary>
+            <returns>
+            A bool representing whether or not the this script's piece is currently undergoing placement correction.
+            </returns>
+        </isPlacementCorrecting>
+    </members>
+</docs>
