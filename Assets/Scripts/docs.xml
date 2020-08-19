@@ -49,4 +49,182 @@
             </summary>
         </PieceTriggerBehaviour>
     </members>
+    <members name="raycasting">
+        <RaycastingBehaviour>
+            <summary>
+            The class that handles the central functionality and stores the central data for the program.
+            </summary>
+            <remarks>
+            This class contains the following aspects of the program:
+            <list type="bullet">
+                <item>
+                <description>Raycasting based on the user's screen touch location, and the activation of thus "touched" machine pieces.</description>
+                </item>
+                <item>
+                <description>Camera rotation, zooming, and panning based on the movement of the user's fingers on the screen.</description>
+                </item>
+                <item>
+                <description>A comprehensive, public method for the process of deactivating the active piece.</description>
+                </item>
+                <item>
+                <description>Public methods for setting the interactability of buttons.</description>
+                </item>
+            </list>
+            </remarks>
+        </RaycastingBehaviour>
+        <camRotationCenter>
+            <summary>
+            The world-space point about which the camera rotates.
+            </summary>
+        </camRotationCenter>
+        <camAxisOfHorizRotation>
+            <summary>
+            The axis about which the camera rotates horizontally (a vertical vector).
+            </summary>
+            <remarks>
+            This should always be equivalent to <c>Vector3.up</c>.
+            </remarks>
+        </camAxisOfHorizRotation>
+        <camAxisOfVertRotation>
+            <summary>
+            The axis about which the camera rotates vertically (a horizontal vector).
+            </summary>
+            <remarks>
+            This should always be completely horizontal and perpendicular to the line of sight.
+            </remarks>
+        </camAxisOfVertRotation>
+        <pieces>
+            <summary>
+            The list of pieces that are currently an active part of the machine.
+            </summary>
+        </pieces>
+        <piecesRemovedWhileResettable>
+            <summary>
+            The list of pieces that were part of the machine when it started but were since removed while the machine was paused.
+            </summary>
+            <remarks>
+            This will always remain empty as long as piece removal is disabled for resettable machines.
+            </remarks>
+        </piecesRemovedWhileResettable>
+        <piecesScrollView>
+            <summary>
+            The <c>GameObject</c> contains the scroll panel with all the contraption pieces.
+            </summary>
+        </piecesScrollView>
+        <pieceControlsPanel>
+            <summary>
+            The <c>GameObject</c> that contains the panel with the piece controls buttons.
+            </summary>
+        </pieceControlsPanel>
+        <pieceRotateLeftButton>
+            <summary>
+            The <c>GameObject</c> that contains a <c>PieceRotateLeftButtonBehaviour</c> and therefore handles the behaviour of the piece-rotate-left button.
+            </summary>
+        </pieceRotateLeftButton>
+        <pieceRotateRightButton>
+            <summary>
+            The <c>GameObject</c> that contains a <c>PieceRotateRightButtonBehaviour</c> and therefore handles the behaviour of the piece-rotate-right button.
+            </summary>
+        </pieceRotateRightButton>
+        <pieceRemoveButton>
+            <summary>
+            The <c>GameObject</c> that contains a <c>PieceRemoveButtonBehaviour</c> and therefore handles the behaviour of the piece-remove button.
+            </summary>
+        </pieceRemoveButton>
+        <cameraRotateLeftButton>
+            <summary>
+            The <c>GameObject</c> that contains a <c>CameraRotateLeftButtonBehaviour</c> and therefore handles the behaviour of the camera-rotate-left button.
+            </summary>
+        </cameraRotateLeftButton>
+        <cameraRotateRightButton>
+            <summary>
+            The <c>GameObject</c> that contains a <c>CameraRotateRightButtonBehaviour</c> and therefore handles the behaviour of the camera-rotate-right button.
+            </summary>
+        </cameraRotateRightButton>
+        <activePiece>
+            <summary>
+            The machine piece that is currently eligible for the user to move and to control through the piece controls buttons. 
+            </summary>
+        </activePiece>
+        <startStopObject>
+            <summary>
+            The <c>GameObject</c> that contains a <c>StartStopButtonBehaviour</c> and therefore handles the behaviour of the start/stop button.
+            </summary>
+        </startStopObject>
+        <resetObject>
+            <summary>
+            The <c>GameObject</c> that contains a <c>ResetButtonBehaviour</c> and therefore handles the behaviour of the reset button.
+            </summary>
+        </resetObject>
+        <clearAllObject>
+            <summary>
+            The <c>GameObject</c> that contains a <c>ClearAllButtonBehaviour</c> and therefore handles the behaviour of the clear-all button.
+            </summary>
+        </clearAllObject>
+        <startStopButtonScript>
+            <summary>
+            The script component that handles the behaviour of the start/stop button.
+            </summary>
+        </startStopButtonScript>
+        <resetButtonScript>
+            <summary>
+            The script component that handles the behaviour of the reset button.
+            </summary>
+        </resetButtonScript>
+        <canvas>
+            <summary>
+            The <c>GameObject</c> that contains a <c>Canvas</c> component is the root <c>GameObject</c> for all UI <c>GameObject</c>s.
+            </summary>
+        </canvas>
+        <clearDialogShowing>
+            <summary>
+            A <c>bool</c> indicating whether or not the dialog for confirming clearing all the pieces is showing.
+            </summary>
+        </clearDialogShowing>
+        <ClearActivePiece>
+            <summary>
+            A method containing the comprehensive process of deactivating the active piece.
+            <para>This method removes the active piece's halo (if there is an active piece), changes its colliders to triggers, 
+            sets the activePiece variable to null, and changes the state of canvas objects.
+            This method does NOT remove a piece, but it does check if there are any pieces remaining (and deactivates the piece controls panel, etc. if there aren't).</para>
+            <para>It is fine to call this method in this or another class.</para>
+            </summary>
+        </ClearActivePiece>
+        <SetAllPieceControlsButtonsInteractable>
+            <summary>
+            Sets the piece controls buttons to be interactable or not.
+            </summary>
+            <param name="active">A <c>bool</c> indicating whether the buttons should be set to be interactable (true) or non-interactable (false).</param>
+        </SetAllPieceControlsButtonsInteractable>
+        <SetAllCameraButtonsInteractable>
+            <summary>
+            Sets the camera buttons to be interactable or not.
+            </summary>
+            <param name="active">A <c>bool</c> indicating whether the buttons should be set to be interactable (true) or non-interactable (false).</param>
+        </SetAllCameraButtonsInteractable>
+        <SetAllButtonsInteractable>
+            <summary>
+            Sets all buttons to be interactable or not.
+            <para>Note that the reset button will only have interactable set to true here if the machine is currently resettable, 
+            the start/stop and clear buttons will only have interactable set to true if the machine currently has pieces,
+            and the piece controls buttons will only be set to interactable if there is an active piece (which there might not be, if the user somehow cleared the active piece before placement correction finished).</para>
+            </summary>
+            <param name="active">A <c>bool</c> indicating whether the buttons should be set to be interactable (true) or non-interactable (false).</param>
+        </SetAllButtonsInteractable>
+    </members>
+    <members name="snapToTarget">
+        <SnapToTargetBehaviour>
+            <summary>
+            The class that handles the behaviour of each individual <c>GameObject</c> that is a designated target for snap-to placement correction (i.e. is in one of the "Snap-Tos" layers).
+            </summary>
+            <remarks>
+            This script should be added to every such <c>GameObject</c> (that is, just the specific <c>GameObject</c> in that layer, not the parent <c>GameObject</c> for its overall machine piece).
+            </remarks>
+        </SnapToTargetBehaviour>
+        <occupied>
+            <summary>
+            A <c>bool</c> that stores the occupied/unoccupied state of this snap-to target.
+            </summary>
+        </occupied>
+    </members>
 </docs>

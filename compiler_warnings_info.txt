@@ -1,0 +1,6 @@
+The file Assets/csc.rsp prompts Unity's C# compiler to write the documentation for the project code to a file called documentation.xml.
+This is the cause of "Missing XML comment for publicly visible type or member" warnings in the console.
+
+It's ideal to resolve such warnings for code that we write ourselves by adding documentation to that code. 
+Once that's done and the compiler has written the latest documentation to documentation.xml, 
+it is fine to temporarily remove Assets/csc.rsp to avoid the compiler warnings for the code we didn't write ourselves.
