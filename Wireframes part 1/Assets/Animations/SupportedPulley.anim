@@ -2301,6 +2301,42 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
     path: Balance v8/Supported Pulley v7:1/Supported Pulley v7/Support Structure
+      v11:1/Support Structure v11/Long Arm (DO NOT MACHINE) v13:2/Long Arm (DO NOT
+      MACHINE) v13 1/Body1 21
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Balance v8/Supported Pulley v7:1/Supported Pulley v7/Support Structure
+      v11:1/Support Structure v11/Long Arm (DO NOT MACHINE) v13:2/Long Arm (DO NOT
+      MACHINE) v13 1/Body1 21
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Balance v8/Supported Pulley v7:1/Supported Pulley v7/Support Structure
+      v11:1/Support Structure v11/Long Arm (DO NOT MACHINE) v13:2/Long Arm (DO NOT
+      MACHINE) v13 1/Body1 21
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Balance v8/Supported Pulley v7:1/Supported Pulley v7/Support Structure
       v11:1/Support Structure v11/Long Arm (DO NOT MACHINE) v13:4/Long Arm (DO NOT
       MACHINE) v13 2/Body1 22
     classID: 4
@@ -2363,42 +2399,6 @@ AnimationClip:
     path: Balance v8/Supported Pulley v7:1/Supported Pulley v7/Support Structure
       v11:1/Support Structure v11/Long Arm (DO NOT MACHINE) v13:1/Long Arm (DO NOT
       MACHINE) v13/Body1 20
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Balance v8/Supported Pulley v7:1/Supported Pulley v7/Support Structure
-      v11:1/Support Structure v11/Long Arm (DO NOT MACHINE) v13:2/Long Arm (DO NOT
-      MACHINE) v13 1/Body1 21
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Balance v8/Supported Pulley v7:1/Supported Pulley v7/Support Structure
-      v11:1/Support Structure v11/Long Arm (DO NOT MACHINE) v13:2/Long Arm (DO NOT
-      MACHINE) v13 1/Body1 21
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Balance v8/Supported Pulley v7:1/Supported Pulley v7/Support Structure
-      v11:1/Support Structure v11/Long Arm (DO NOT MACHINE) v13:2/Long Arm (DO NOT
-      MACHINE) v13 1/Body1 21
     classID: 4
     script: {fileID: 0}
   - curve:
