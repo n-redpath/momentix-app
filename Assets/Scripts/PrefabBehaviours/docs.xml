@@ -196,4 +196,81 @@
             </returns>
         </isPlacementCorrecting>
     </members>
+    <members name="ball">
+        <BallPrefabBehaviour>
+            <summary>
+            The class that handles the overall behaviour of the ball prefab.
+            </summary>
+        </BallPrefabBehaviour>
+    </members>
+    <members name="ballRamp">
+        <BallRampPrefabBehaviour>
+            <summary>
+            The class that handles the overall behaviour of the ball-ramp prefab.
+            </summary>
+        </BallRampPrefabBehaviour>
+    </members>
+    <members name="block">
+        <BlockPrefabBehaviour>
+            <summary>
+            The class that handles the overall behaviour of the block prefab.
+            </summary>
+        </BlockPrefabBehaviour>
+    </members>
+    <members name="flatLever">
+        <FlatLeverPrefabBehaviour>
+            <summary>
+            The class that handles the overall behaviour of the flat lever prefab.
+            </summary>
+        </FlatLeverPrefabBehaviour>
+    </members>
+    <members name="kick">
+        <KickPrefabBehaviour>
+            <summary>
+            The class that handles the overall behaviour of the kick prefab.
+            </summary>
+        </KickPrefabBehaviour>
+    </members>
+    <members name="one35Domino">
+        <One_3_5_DominoPrefabBehaviour>
+            <summary>
+            The class that handles the overall behaviour of the one 3/5 domino prefab.
+            </summary>
+        </One_3_5_DominoPrefabBehaviour>
+    </members>
+    <members name="oneArmSwing">
+        <OneArmSwingPrefabBehaviour>
+            <summary>
+            The class that handles the overall behaviour of the one-arm swing prefab.
+            </summary>
+        </OneArmSwingPrefabBehaviour>
+    </members>
+    <members name="raisedLever">
+        <RaisedLeverPrefabBehaviour>
+            <summary>
+            The class that handles the overall behaviour of the raised lever prefab.
+            </summary>
+        </RaisedLeverPrefabBehaviour>
+    </members>
+    <members name="ramp">
+        <RampPrefabBehaviour>
+            <summary>
+            The class that handles the overall behaviour of the ramp prefab.
+            </summary>
+        </RampPrefabBehaviour>
+    </members>
+    <members name="seven35Dominoes">
+        <Seven_3_5_DominoesPrefabBehaviour>
+            <summary>
+            The class that handles the overall behaviour of the seven 3/5 dominoes prefab.
+            </summary>
+        </Seven_3_5_DominoesPrefabBehaviour>
+    </members>
+    <members name="teeterTotterLever">
+        <TeeterTotterLeverPrefabBehaviour>
+            <summary>
+            The class that handles the overall behaviour of the teeter-totter lever prefab.
+            </summary>
+        </TeeterTotterLeverPrefabBehaviour>
+    </members>
 </docs>
